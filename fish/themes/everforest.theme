@@ -1,0 +1,22 @@
+fish_color_normal d3c6aa
+fish_color_command a7c080
+fish_color_keyword d699b6
+fish_color_quote e69875
+fish_color_redirection d3c6aa
+fish_color_end ff9e64
+fish_color_error e67e80
+fish_color_param deadc4
+fish_color_comment 859289
+fish_color_selection --background=475258
+fish_color_search_match --background=425047
+fish_color_operator b8cc99
+fish_color_escape d699b6
+fish_color_autosuggestion deadc4
+
+# Completion Pager Colors
+fish_pager_color_progress deadc4
+fish_pager_color_prefix 98c8c2
+fish_pager_color_completion d3c6aa
+fish_pager_color_description deadc4
+fish_pager_color_selected_background --background=425047
+  
