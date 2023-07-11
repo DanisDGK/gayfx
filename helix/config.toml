@@ -1,0 +1,26 @@
+theme = "everforest_dark_dgk"
+
+[editor]
+scrolloff = 8
+idle-timeout = 200
+bufferline = "multiple"
+color-modes = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "spacer", "file-name"]
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]

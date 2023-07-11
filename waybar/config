@@ -1,0 +1,22 @@
+{
+  "height": 48, 
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["clock"],
+  "modules-right": ["wireplumber", "tray"],
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{: %A, %b %d  -   %H:%M}"
+  },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "0% ",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 6
+  }
+}

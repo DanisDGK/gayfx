@@ -1,0 +1,220 @@
+bar swaybar_command waybar
+
+seat seat0 {
+    xcursor_theme Catppuccin-Mocha-Green-Cursors 32
+}
+
+### Variables
+set {
+    $mod Mod4
+    $left h
+    $down j
+    $up k
+    $right l
+
+    $resize_factor 40px
+
+    $term footclient
+    $menu wofi --show drun --normal-window
+    $browser firefox
+
+    $screenshot_area grimshot copy area
+    $screenshot_window grimshot copy window
+}
+
+font 'Roboto 12'
+
+gaps inner 6
+gaps outer 12
+default_border pixel 3
+default_floating_border pixel 3
+corner_radius 5
+
+shadows on
+shadows_on_csd on
+shadow_blur_radius 25
+shadow_color #0000007F
+
+blur enable
+blur_passes 2
+blur_radius 2
+
+focus_follows_mouse always
+
+### Output configuration
+output HDMI-A-1 max_render_time 3
+
+input * {
+    repeat_delay 210
+    repeat_rate 40
+
+    xkb_layout "us,lv,canary"
+    xkb_variant ",tilde,"
+    xkb_options "compose:menu,grp:shifts_toggle,caps:backspace"
+
+    accel_profile flat
+}
+
+# Polkit
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Automount
+exec udiskie -t
+
+# Autotiling
+exec_always pkill autotiling && autotiling
+
+# Wallpaper
+exec swww init && swww img /home/danielle/.config/sway/forest.jpg
+
+# Notifications
+exec mako
+
+# Foot server
+exec foot --server
+
+# Keybindings
+floating_modifier $mod normal
+bindsym {
+    $mod+Shift+Return exec $term
+    $mod+w kill
+    $mod+p exec $menu
+    $mod+z exec swaylock
+    $mod+Shift+r reload
+    $mod+Shift+q exit
+
+    $mod+Print exec $screenshot_area
+    $mod+Shift+Print exec $screenshot_window
+
+    # Focus
+    $mod+$left focus left
+    $mod+$down focus down
+    $mod+$up focus up
+    $mod+$right focus right
+    $mod+Left focus left
+    $mod+Down focus down
+    $mod+Up focus up
+    $mod+Right focus right
+
+    # Move
+    $mod+Shift+$left move left
+    $mod+Shift+$down move down
+    $mod+Shift+$up move up
+    $mod+Shift+$right move right
+    $mod+Shift+Left move left
+    $mod+Shift+Down move down
+    $mod+Shift+Up move up
+    $mod+Shift+Right move right
+
+    # Resize
+    $mod+Ctrl+$left resize shrink width $resize_factor
+    $mod+Ctrl+$down resize grow height $resize_factor 
+    $mod+Ctrl+$up resize shrink height $resize_factor
+    $mod+Ctrl+$right resize grow width $resize_factor 
+    $mod+Ctrl+Left resize shrink width $resize_factor
+    $mod+Ctrl+Down resize grow height $resize_factor 
+    $mod+Ctrl+Up resize shrink height $resize_factor
+    $mod+Ctrl+Right resize grow width $resize_factor
+
+    # Switch to workspace
+    $mod+1 workspace number 1
+    $mod+2 workspace number 2
+    $mod+3 workspace number 3
+    $mod+4 workspace number 4
+    $mod+5 workspace number 5
+    $mod+6 workspace number 6
+    $mod+7 workspace number 7
+    $mod+8 workspace number 8
+    $mod+9 workspace number 9
+    $mod+0 workspace number 10
+
+     # Move focused container to workspace
+    $mod+Shift+1 move container to workspace number 1
+    $mod+Shift+2 move container to workspace number 2
+    $mod+Shift+3 move container to workspace number 3
+    $mod+Shift+4 move container to workspace number 4
+    $mod+Shift+5 move container to workspace number 5
+    $mod+Shift+6 move container to workspace number 6
+    $mod+Shift+7 move container to workspace number 7
+    $mod+Shift+8 move container to workspace number 8
+    $mod+Shift+9 move container to workspace number 9
+    $mod+Shift+0 move container to workspace number 10
+
+    # Layout stuff
+    $mod+Shift+f fullscreen
+    $mod+Shift+space floating toggle
+    $mod+space focus mode_toggle
+    $mod+a focus parent
+
+    # Notifications
+    Ctrl+space exec makoctl dismiss
+    Ctrl+Shift+space exec makoctl restore
+    Ctrl+Alt+space exec makoctl dismiss -a
+}
+
+# Window rules
+for_window [title=".*osu.*"] max_render_time 2
+for_window [app_id=".*osu.*"] max_render_time 2
+for_window [app_id="Etterna"] max_render_time 2
+for_window [app_id="wofi"] opacity 0.9, floating enable, sticky enable, border pixel 0
+
+assign [title=".*osu.*"] 1
+assign [app_id=".*osu.*"] 1
+assign [title=".*Visual Studio Code.*"] 1
+assign [app_id="firefox"] 2
+assign [app_id="discord"] 3
+assign [app_id="WebCord"] 3
+assign [title="Spotify"] 4
+
+# Theming
+set {
+    $bg_dim #232a2e
+    $bg0 #2d353b
+    $bg1 #343f44
+    $bg2 #3d484d
+    $bg3 #475258
+    $bg4 #4f585e
+    $bg5 #56635f
+    $bg_visual #543a48
+    $bg_red #514045
+    $bg_green #425047
+    $bg_blue #3a515d
+    $bg_yellow #4d4c43
+
+    $fg #d3c6aa
+    $red #e67e80
+    $orange #e69875
+    $yellow #dbbc7f
+    $green #a7c080
+    $aqua #83c092
+    $blue #7fbbb3
+    $purple #d699b6
+
+    $grey0 #7a8478
+    $grey1 #859289
+    $grey2 #9da9a0
+}
+
+# target                 title     bg        text      indicator  border
+client.focused           $green    $green    $bg1      $green     $green
+client.focused_inactive  $bg1      $bg1      $green    $bg1       $bg1
+client.unfocused         $bg1      $bg1      $green    $bg1       $bg1
+client.urgent            $red      $red      $green    $red       $red
+client.background        $bg0
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme "Everforest-Dark-Borderless"
+    gsettings set $gnome-schema icon-theme "Everforest-Dark"
+    gsettings set $gnome-schema icon-size 32
+    gsettings set $gnome-schema cursor-theme "Catppuccin-Mocha-Green-Cursors"
+    gsettings set $gnome-schema cursor-size 32
+    gsettings set $gnome-schema font-name 'Roboto 12'
+}
+
+
+exec export XDG_CURRENT_DESKTOP=sway
+exec export MOZ_ENABLE_WAYLAND=1
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+include /etc/sway/config.d/*

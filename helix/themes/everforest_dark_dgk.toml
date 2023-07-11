@@ -1,0 +1,54 @@
+inherits = "everforest_dark"
+
+"ui.background" = "bg0"
+"ui.linenr" = "#3d484d"
+"ui.linenr.selected" = "bg_grey0"
+"ui.statusline" = { fg = "grey0", bg = "bg2" }
+"ui.statusline.inactive" = { fg = "grey0", bg = "bg1" }
+"ui.statusline.normal" = { fg = "bg0", bg = "blue" }
+"ui.statusline.insert" = { fg = "bg0", bg = "green" }
+"ui.statusline.select" = { fg = "bg0", bg = "orange" }
+"ui.bufferline" = { fg = "grey0", bg = "bg1" }
+"ui.bufferline.active" = { fg = "bg0", bg = "bg_grey0" }
+"ui.popup" = { fg = "grey2", bg = "bg0" }
+"ui.window" = { fg = "bg4", bg = "bg0" }
+"ui.help" = { fg = "fg", bg = "bg0" }
+"ui.menu" = { fg = "fg", bg = "bg0" }
+"ui.menu.selected" = { fg = "bg0", bg = "green" }
+"ui.virtual.ruler" = { bg = "bg2" }
+"ui.virtual.whitespace" = { fg = "bg3" }
+"ui.virtual.indent-guide" = { fg = "bg2" }
+"ui.virtual.inlay-hint" = { fg = "bg3" }
+"ui.virtual.wrap" = { fg = "grey0" }
+
+[palette]
+
+bg_dim = "#232a2e"
+bg0 = "#2d353b00"
+bg1 = "#343f4450"
+bg2 = "#3d484d50"
+bg3 = "#47525850"
+bg4 = "#4f585e50"
+bg5 = "#56635f50"
+bg_visual = "#543a4850"
+bg_red = "#51404550"
+bg_green = "#42504750"
+bg_blue = "#3a515d50"
+bg_yellow = "#4d4c4350"
+
+fg = "#d3c6aa"
+red = "#e67e80"
+orange = "#e69875"
+yellow = "#dbbc7f"
+green = "#a7c080"
+aqua = "#83c092"
+blue = "#7fbbb3"
+purple = "#d699b6"
+
+grey0 = "#7a8478"
+grey1 = "#859289"
+grey2 = "#9da9a0"
+
+bg_grey0 = "#7a847850"
+bg_grey1 = "#85928950"
+bg_grey2 = "#9da9a050"

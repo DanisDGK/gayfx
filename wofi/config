@@ -1,0 +1,11 @@
+show=drun
+width=40%
+height=35%
+prompt=
+layer=overlay
+gtk_dark=true
+insensitive=true
+content_halign=center
+always_parse_args=true
+print_command=true
+show_all=true

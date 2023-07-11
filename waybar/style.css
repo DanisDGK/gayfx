@@ -1,0 +1,78 @@
+@import "everforest.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-family: CozetteHiDpi;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @green;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+button {
+  padding: 0;
+  color: @green;
+  border-radius: 5px;
+  border-bottom: none;
+}
+
+#workspaces button:hover {
+  background-color: rgba(167, 192, 128, 0.2);
+}
+
+#workspaces button.focused {
+  background-color: @green;
+  color: @bg0;
+}
+
+#workspaces button.focused:hover {
+  background-color: rgb(150, 180, 110);
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @bg0;
+}
+
+.modules-right > widget > * {
+  padding: 0 8px;
+  margin-left: 0;
+  margin-right: 0;
+  color: @bg0;
+  background-color: @green;
+}
+
+.modules-right > widget:first-child > * {
+  border-radius: 5px 0 0 5px;
+}
+
+.modules-right > widget:last-child > * {
+  border-radius: 0 5px 5px 0;
+}
+
+#wireplumber {
+  padding-top: 3px;
+}
+
+label:focus {
+  background-color: transparent;
+}
+
+tooltip {
+  border-radius: 5px;
+  background: rgba(45, 53, 59, 0.8);
+}
+
+tooltip label {
+  color: @green;
+}

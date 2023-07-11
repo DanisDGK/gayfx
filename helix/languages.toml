@@ -1,0 +1,7 @@
+[[language]]
+name = "glsl"
+file-types = [ "glsl", "vert", "tesc", "tese", "geom", "frag", "comp", "fsh", "vsh" ]
+
+[[language]]
+name = "cpp"
+auto-format = true
