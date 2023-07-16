@@ -2,12 +2,12 @@
   "height": 48, 
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["clock"],
-  "modules-right": ["wireplumber", "tray"],
+  "modules-right": ["pulseaudio", "tray"],
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{: %A, %b %d  -   %H:%M}"
   },
-  "wireplumber": {
+  "pulseaudio": {
     "format": "{volume}% {icon}",
     "format-muted": "0% ",
     "format-icons": {

@@ -27,7 +27,7 @@ button {
 }
 
 #workspaces button:hover {
-  background-color: rgba(167, 192, 128, 0.2);
+  background-color: alpha(@green, 0.2);
 }
 
 #workspaces button.focused {
@@ -36,7 +36,7 @@ button {
 }
 
 #workspaces button.focused:hover {
-  background-color: rgb(150, 180, 110);
+  background-color: shade(@green, 0.9);
 }
 
 #workspaces button.urgent {
@@ -44,7 +44,7 @@ button {
   color: @bg0;
 }
 
-.modules-right > widget > * {
+.modules-right>widget>* {
   padding: 0 8px;
   margin-left: 0;
   margin-right: 0;
@@ -52,15 +52,15 @@ button {
   background-color: @green;
 }
 
-.modules-right > widget:first-child > * {
+.modules-right>widget:first-child>* {
   border-radius: 5px 0 0 5px;
 }
 
-.modules-right > widget:last-child > * {
+.modules-right>widget:last-child>* {
   border-radius: 0 5px 5px 0;
 }
 
-#wireplumber {
+#pulseaudio {
   padding-top: 3px;
 }
 
@@ -70,7 +70,7 @@ label:focus {
 
 tooltip {
   border-radius: 5px;
-  background: rgba(45, 53, 59, 0.8);
+  background: alpha(@bg0, 0.8);
 }
 
 tooltip label {
